@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D936572B-C56C-4E1E-8E43-54EFA5705B35}</ProjectGuid>
+    <ProjectGuid>{42D775CC-9D0D-4D43-9D74-0988F0609F10}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConOverConf.Fluent.Persistence</RootNamespace>
-    <AssemblyName>ConOverConf.Fluent.Persistence</AssemblyName>
+    <RootNamespace>ConOverConf.Fluent.Tests</RootNamespace>
+    <AssemblyName>ConOverConf.Fluent.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -49,6 +49,9 @@
     <Reference Include="NHibernate.ByteCode.Castle">
       <HintPath>..\packages\NHibernate.Core.3.0.0.2001\lib\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.5.7.10213\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="Remotion.Data.Linq">
       <HintPath>..\packages\NHibernate.Core.3.0.0.2001\lib\Remotion.Data.Linq.dll</HintPath>
     </Reference>
@@ -61,25 +64,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FluentMappings\CustomPrimaryKeyConvention.cs" />
-    <Compile Include="FluentMappings\FluentMappingConfiguration.cs" />
-    <Compile Include="FluentMappings\OrderMap.cs" />
+    <Compile Include="MappingTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConOverConf.Fluent.Core\ConOverConf.Fluent.Core.csproj">
-      <Project>{1B4F91EB-0A67-4D4B-89B9-3988D13B669D}</Project>
+      <Project>{F0AEEF95-41FF-4E04-9CE5-31576FC9384F}</Project>
       <Name>ConOverConf.Fluent.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="XmlMappings\Employee.hbm.xml" />
-    <Content Include="XmlMappings\Product.hbm.xml" />
-    <Content Include="XmlMappings\Store.hbm.xml" />
+    <ProjectReference Include="..\ConOverConf.Fluent.Persistence\ConOverConf.Fluent.Persistence.csproj">
+      <Project>{D936572B-C56C-4E1E-8E43-54EFA5705B35}</Project>
+      <Name>ConOverConf.Fluent.Persistence</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

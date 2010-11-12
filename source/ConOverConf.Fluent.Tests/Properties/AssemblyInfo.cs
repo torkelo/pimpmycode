@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ConOverConf.Fluent.Core")]
+[assembly: AssemblyTitle("ConOverConf.Fluent.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("ConOverConf.Fluent.Core")]
+[assembly: AssemblyProduct("ConOverConf.Fluent.Tests")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ce1481cb-0102-495d-a5bf-2abc5ecba123")]
+[assembly: Guid("6beae985-272c-4cdf-851e-3e84d0d6f222")]
 
 // Version information for an assembly consists of the following four values:
 //

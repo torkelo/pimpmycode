@@ -38,3 +38,5 @@
 *.ReSharper.user
 *.suo
 *.cache
+bin
+obj
