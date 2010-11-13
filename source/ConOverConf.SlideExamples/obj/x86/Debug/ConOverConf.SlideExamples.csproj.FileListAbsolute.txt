@@ -1,1 +1,9 @@
 C:\Users\Tokel\Documents\Presentations\PimpMyCode\source\ConOverConf.SlideExamples\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\OSS\pimpmycode\source\ConOverConf.SlideExamples\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\OSS\pimpmycode\source\ConOverConf.SlideExamples\bin\Debug\ConOverConf.SlideExamples.exe
+C:\OSS\pimpmycode\source\ConOverConf.SlideExamples\bin\Debug\ConOverConf.SlideExamples.pdb
+C:\OSS\pimpmycode\source\ConOverConf.SlideExamples\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\OSS\pimpmycode\source\ConOverConf.SlideExamples\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\OSS\pimpmycode\source\ConOverConf.SlideExamples\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\OSS\pimpmycode\source\ConOverConf.SlideExamples\obj\x86\Debug\ConOverConf.SlideExamples.exe
+C:\OSS\pimpmycode\source\ConOverConf.SlideExamples\obj\x86\Debug\ConOverConf.SlideExamples.pdb

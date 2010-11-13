@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using log4net;
-using log4net.Core;
 
 namespace ConOverConf.SlideExamples
 {
     class Program
     {
-        private static ILog _logger = LoggerManager.GetLogger(typeof (Program));
+        //private static ILog _logger = LoggerManager.GetLogger(typeof (Program));
 
         public int TransferCount { get; private set; }
+
+        public static void Main()
+        {}
 
 
         public int GetTransferPriority<T>(T transfer) where T : Transfer
@@ -30,6 +29,8 @@ namespace ConOverConf.SlideExamples
             {
                 HandleException(ex);
             }
+
+            return 0;
         }
 
         private void DoSomeLogging()
@@ -37,13 +38,7 @@ namespace ConOverConf.SlideExamples
             throw new NotImplementedException();
         }
 
-        protected decimal Limit
-        {
-            get { throw new NotImplementedException(); }
-            set { throw new NotImplementedException();
-            TransferCount=1}
-        }
-
+        
         private void HandleException(Exception exception)
         {
             throw new NotImplementedException();
