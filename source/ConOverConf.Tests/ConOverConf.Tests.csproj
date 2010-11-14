@@ -57,6 +57,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackendTests.cs" />
     <Compile Include="MappingTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -71,6 +74,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ConOverConf.Contracts\ConOverConf.Contracts.csproj">
+      <Project>{A702A2D5-34FA-4310-B042-D1FE3ECC9632}</Project>
+      <Name>ConOverConf.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ConOverConf.Core\ConOverConf.Core.csproj">
       <Project>{67BD9AEE-A520-4E23-B3C8-63C980D9A4F3}</Project>
       <Name>ConOverConf.Core</Name>

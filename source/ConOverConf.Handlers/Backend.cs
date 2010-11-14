@@ -1,33 +1,21 @@
-﻿using ConOverConf.Contracts;
-using Microsoft.Practices.ServiceLocation;
+using System.ServiceModel;
+using ConOverConf.Contracts;
+using ConOverConf.Contracts.Commands;
+using ConOverConf.Contracts.Queries;
 
 namespace ConOverConf.Handlers
 {
+    [ServiceBehavior(Name = "Backend",InstanceContextMode = InstanceContextMode.PerCall, ConcurrencyMode = ConcurrencyMode.Single)]
     public class Backend : IBackend
     {
-        private readonly IServiceLocator serviceLocator;
-
-        public Backend(IServiceLocator serviceLocator)
+        public void SendCommand(Command command)
         {
-            this.serviceLocator = serviceLocator;
+            IoC.Resolve<ICommandInvoker>().Invoke(command);
         }
 
-        public void SendCommand(ICommand command)
+        public QueryResult SendQuery(Query query)
         {
-            var handlerType = typeof (ICommandHandler<>).MakeGenericType(command.GetType());
-
-            var commandHandler = serviceLocator.GetInstance(handlerType);
-
-            handlerType.GetMethod("Handle").Invoke(commandHandler, new[] { command });
-        }
-
-        public IQueryResult SendQuery(IQuery query)
-        {
-            var handlerType = typeof(IQueryHandler<>).MakeGenericType(query.GetType());
-
-            var queryHandle = serviceLocator.GetInstance(handlerType);
-
-            return handlerType.GetMethod("Handle").Invoke(queryHandle, new[] { query }) as IQueryResult;
+            return IoC.Resolve<QueryInvoker>().Invoke(query);
         }
     }
 }

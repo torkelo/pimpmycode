@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,13 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\AddEmployeeToStoreCommand.cs" />
     <Compile Include="Data\ContractDTO.cs" />
     <Compile Include="IBackend.cs" />
-    <Compile Include="ICommand.cs" />
-    <Compile Include="IQuery.cs" />
+    <Compile Include="KnownTypesHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\GetStoreQuery.cs" />
+    <Compile Include="Queries\Query.cs" />
+    <Compile Include="Queries\QueryResult.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -36,6 +36,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,11 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backend.cs" />
-    <Compile Include="CommandHandlers\NewContractCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddEmployeeToStoreCommandHandler.cs" />
+    <Compile Include="CommandInvoker.cs" />
     <Compile Include="ICommandHandler.cs" />
+    <Compile Include="ICommandInvoker.cs" />
+    <Compile Include="IHandleCommand.cs" />
+    <Compile Include="IoC.cs" />
     <Compile Include="IQueryHandler.cs" />
+    <Compile Include="IQueryInvoker.cs" />
+    <Compile Include="Backend.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryInvoker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

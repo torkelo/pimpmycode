@@ -1,11 +1,15 @@
 using System;
+using System.Runtime.Serialization;
 
 namespace ConOverConf.Contracts.Commands
 {
-    public class AddEmployeeToStoreCommand : ICommand
+    [DataContract]
+    public class AddEmployeeToStoreCommand : Command
     {
+        [DataMember]
         public Guid StoreId { get; set; }
 
+        [DataMember]
         public Guid EmployeeId { get; set; }
     }
 }
