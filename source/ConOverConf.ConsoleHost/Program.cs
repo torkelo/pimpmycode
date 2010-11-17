@@ -13,6 +13,8 @@ namespace ConOverConf.ConsoleHost
     {
         static void Main(string[] args)
         {
+            AutoMapperConfiguration.Configure();
+
             //UnityBootstrapper.Setup();
             StructureMapBootstrapper.Setup();
 

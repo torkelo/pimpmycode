@@ -71,6 +71,10 @@
       <Project>{67BD9AEE-A520-4E23-B3C8-63C980D9A4F3}</Project>
       <Name>ConOverConf.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ConOverConf.Persistence\ConOverConf.Persistence.csproj">
+      <Project>{C9B0906E-90E4-483B-B510-3A4EB3EF6B77}</Project>
+      <Name>ConOverConf.Persistence</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

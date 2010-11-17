@@ -29,7 +29,7 @@ namespace ConOverConf.Core.Models
             Staff.Add(employee);
         }
 
-        public void MarkAsOpened()
+        public virtual void MarkAsOpened()
         {
                 
         }

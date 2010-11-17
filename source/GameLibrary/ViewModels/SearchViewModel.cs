@@ -60,22 +60,22 @@ namespace GameLibrary.ViewModels
             yield return Show.Busy();
             yield return search;
 
-            var resultCount = search.Response.Count();
+            var hits = search.Response.Hits;
 
-            if (resultCount == 0)
+            if (hits.Count() == 0)
                 SearchResults = _noResults.WithTitle(SearchText);
-            else if (resultCount == 1 && search.Response.First().Title == SearchText)
+            else if (hits.Count() == 1 && hits.First().Title == SearchText)
             {
                 var getGame = new GetGame
                 {
-                    Id = search.Response.First().Id
+                    Id = hits.First().Id
                 }.AsResult();
 
                 yield return getGame;
                 yield return Show.Screen<ExploreGameViewModel>()
                     .Configured(x => x.WithGame(getGame.Response));
             }
-            else SearchResults = _results.With(search.Response);
+            else SearchResults = _results.With(hits);
 
             yield return Show.NotBusy();
         }

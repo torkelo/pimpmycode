@@ -10,10 +10,10 @@ namespace GameLibrary.ViewModels
     [Export(typeof(ExploreGameViewModel))]
     public class ExploreGameViewModel : ViewModelBase, IScreen 
     {
-        private GameDTO _game;
+        private GameViewModel _game;
         private string _borrower;
 
-        public GameDTO Game
+        public GameViewModel Game
         {
             get { return _game; }
         }
@@ -51,7 +51,7 @@ namespace GameLibrary.ViewModels
 
         public void WithGame(GameDTO game)
         {
-            _game = game;
+            _game = new GameViewModel(game);
             Borrower = game.Borrower ?? string.Empty;
         }
 

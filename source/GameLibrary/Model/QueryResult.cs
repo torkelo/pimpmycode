@@ -5,7 +5,7 @@ namespace GameLibrary.Model
     using System;
     using Framework;
 
-    public class QueryResult<TResponse> : IResult
+    public class QueryResult<TResponse> : IResult where TResponse : QueryResult
     {
         private readonly Query<TResponse> _query;
 

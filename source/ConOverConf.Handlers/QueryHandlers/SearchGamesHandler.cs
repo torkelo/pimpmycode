@@ -21,8 +21,11 @@ namespace ConOverConf.Handlers.QueryHandlers
         public object Handle(SearchGames query)
         {
             var games = _gameRepository.Search(query.SearchText);
+            
+            var result = new SearchGamesResult();
+            result.Hits = Mapper.Map<IEnumerable<Game>, IEnumerable<SearchResultDTO>>(games);
 
-            return Mapper.Map<IEnumerable<Game>, IEnumerable<GameDTO>>(games);
+            return result;
         }
     }
 }

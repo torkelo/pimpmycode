@@ -9,6 +9,6 @@ namespace ConOverConf.Contracts
         void SendCommand(Command command);
 
         [OperationContract]
-        object SendQuery(Query query);
+        QueryResult SendQuery(Query query);
     }
 }

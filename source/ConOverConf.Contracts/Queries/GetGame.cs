@@ -11,4 +11,5 @@ namespace ConOverConf.Contracts.Queries
         public Guid Id { get; set; }
     }
    
+   
 }

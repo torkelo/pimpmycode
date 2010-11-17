@@ -14,6 +14,6 @@ namespace ConOverConf.Contracts
         [OperationContract(AsyncPattern = true)]
         IAsyncResult BeginSendQuery(Query query, AsyncCallback callback, object state);
 
-        object EndSendQuery(IAsyncResult asyncResult);
+        QueryResult EndSendQuery(IAsyncResult asyncResult);
     }
 }   

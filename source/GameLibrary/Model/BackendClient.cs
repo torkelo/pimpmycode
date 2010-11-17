@@ -15,7 +15,7 @@ namespace GameLibrary.Model
     [Export(typeof(IBackendClient))]
     public class BackendClient : IBackendClient
     {
-        public void Send<TResponse>(Query<TResponse> query, Action<TResponse> reply)
+        public void Send<TResponse>(Query<TResponse> query, Action<TResponse> reply) where TResponse : QueryResult
         {
             var channel = GetBackendChannel();
             channel.BeginSendQuery(query, result => reply((TResponse)channel.EndSendQuery(result)), null);

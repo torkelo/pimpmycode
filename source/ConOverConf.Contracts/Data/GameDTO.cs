@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace ConOverConf.Contracts.Data
 {
     [DataContract]
-    public class GameDTO 
+    public class GameDTO : QueryResult
     {
         [DataMember]
         public Guid Id { get; set; }

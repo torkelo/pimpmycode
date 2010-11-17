@@ -18,6 +18,10 @@ namespace ConOverConf.Persistence
         private static ISessionFactory _sessionFactory;
         private const string ConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=PimpMyCode;Integrated Security=True;Pooling=False";
 
+        // BAD Practice, use WCF OperationContext (just for demo purpose)
+        [ThreadStatic]
+        private static ISession _session;
+
         public static ISession GetCurrent()
         {
             if (_sessionFactory == null)
@@ -25,14 +29,20 @@ namespace ConOverConf.Persistence
                 _sessionFactory = BuildSessionFactory(); // normally you would have thread locks around this
             }
             
+            if (_session == null)
+            {
+                _session = _sessionFactory.OpenSession();
+                _session.FlushMode = FlushMode.Commit;
+            }
 
-            // normaly you would have a session store (per-request or something, store it in WCF OperationContext)
-            return _sessionFactory.OpenSession();
+            return _session;
         }
 
         private static ISessionFactory BuildSessionFactory()
         {
-            return BuildNHibernateConfiguration().BuildSessionFactory();
+            var config = BuildNHibernateConfiguration();
+            
+            return config.BuildSessionFactory();
         }
 
         private static Configuration BuildNHibernateConfiguration()

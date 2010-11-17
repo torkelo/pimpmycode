@@ -4,7 +4,7 @@ namespace GameLibrary.Model
 {
     public static class BackendUIExtensions
     {
-        public static QueryResult<TResponse> AsResult<TResponse>(this Query<TResponse> query)
+        public static QueryResult<TResponse> AsResult<TResponse>(this Query<TResponse> query) where TResponse : QueryResult
         {
             return new QueryResult<TResponse>(query);
         }
