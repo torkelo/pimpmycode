@@ -22,6 +22,8 @@
 
             if(IsRunningOutOfBrowser && HasElevatedPermissions)
             {
+                MainWindow.Width = 600;
+                
                 MainWindow.Closing += (s, args) => {
                     args.Cancel = !IoC.GetInstance<IShell>().CanClose();
                 };

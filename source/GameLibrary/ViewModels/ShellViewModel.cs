@@ -1,4 +1,6 @@
-﻿namespace GameLibrary.ViewModels
+﻿using GameLibrary.Views;
+
+namespace GameLibrary.ViewModels
 {
     using System.Collections.Generic;
     using System.ComponentModel.Composition;

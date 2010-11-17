@@ -86,6 +86,11 @@ namespace GameLibrary.ViewModels
                 .Configured(x => x.Title = "New Game");
         }
 
+        public IResult PimpMyCode()
+        {
+            return Show.Screen<PimpMyCodeViewModel>();
+        }
+
         public void Activate()
         {
             SearchText = null;

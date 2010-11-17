@@ -17,6 +17,12 @@
                         Content="Go" />
             </StackPanel>
         </Border>
+
+        
+        <Button x:Name="PimpMyCode"
+                tc:DockPanel.Dock="Bottom"
+                Content="PimpMyCode"
+                HorizontalAlignment="Center" Margin="0,20,0,0" />
         
         <Button x:Name="AddGame"
                 tc:DockPanel.Dock="Bottom"

@@ -11,7 +11,7 @@ namespace GameLibrary.ViewModels
     public class ExploreGameViewModel : ViewModelBase, IScreen 
     {
         private GameViewModel _game;
-        private string _borrower;
+        private string _borrower;   
 
         public GameViewModel Game
         {

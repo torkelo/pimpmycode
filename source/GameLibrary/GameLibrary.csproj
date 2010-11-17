@@ -83,6 +83,7 @@
     </Compile>
     <Compile Include="Framework\BooleanToVisibilityConverter.cs" />
     <Compile Include="Framework\Bootstrapper.cs" />
+    <Compile Include="Framework\DelegateCommand.cs" />
     <Compile Include="Framework\Execute.cs" />
     <Compile Include="Framework\Show.cs" />
     <Compile Include="Framework\BusyResult.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="ViewModels\GameViewModel.cs" />
     <Compile Include="ViewModels\IndividualResultViewModel.cs" />
     <Compile Include="ViewModels\NoResultsViewModel.cs" />
+    <Compile Include="ViewModels\PimpMyCodeViewModel.cs" />
     <Compile Include="ViewModels\ResultsViewModel.cs" />
     <Compile Include="ViewModels\SearchViewModel.cs" />
     <Compile Include="Resources\Background.xaml.cs">
@@ -115,6 +117,9 @@
     </Compile>
     <Compile Include="Views\AddGameView.xaml.cs">
       <DependentUpon>AddGameView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PimpMyCodeView.xaml.cs">
+      <DependentUpon>PimpMyCodeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ExploreGameView.xaml.cs">
       <DependentUpon>ExploreGameView.xaml</DependentUpon>
@@ -200,6 +205,10 @@
     <Page Include="Views\AddGameView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PimpMyCodeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ExploreGameView.xaml">
       <SubType>Designer</SubType>
