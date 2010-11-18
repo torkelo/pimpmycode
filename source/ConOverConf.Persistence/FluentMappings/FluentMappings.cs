@@ -43,4 +43,16 @@ namespace ConOverConf.Persistence.FluentMappings
               .Table("StoreProduct");
         }
     }
+
+    public class GameMap : ClassMap<Game>
+    {
+        public GameMap()
+        {
+            Id(x => x.Id);
+            Map(x => x.Title);
+            Map(x => x.Borrower);
+            Map(x => x.Notes);
+            Map(x => x.AddedOn);
+        }
+    }
 }

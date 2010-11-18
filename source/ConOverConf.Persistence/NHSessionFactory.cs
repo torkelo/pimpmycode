@@ -56,24 +56,9 @@ namespace ConOverConf.Persistence
 
         private static void BuildFluentMappingConfig(MappingConfiguration mappings)
         {
-            //mappings.FluentMappings.AddFromAssemblyOf<EmployeeMap>();
-
-            var autoCfg = new FluentAutoMappingConfiguration();
-            var autoMappings = AutoMap.AssemblyOf<Employee>(autoCfg)
-                .Conventions.AddFromAssemblyOf<CustomPrimaryKeyConvention>()
-                .Override<Store>(map =>
-                {
-                    map.HasMany(x => x.Staff).Cascade.All();
-                    map.HasManyToMany(x => x.Products).Cascade.All();
-                })
-                 ;
-
-            mappings.AutoMappings.Add(autoMappings);
+            mappings.FluentMappings.AddFromAssemblyOf<EmployeeMap>();
+            
         }
-
-
-
-
 
         public static void BuildSchema()
         {
@@ -97,6 +82,20 @@ namespace ConOverConf.Persistence
                     command.ExecuteNonQuery();
                 }
             }
-        }
+        }  
+        
+        #region auto mapping cheat
+        //private static void BuildFluentMappingConfig(MappingConfiguration mappings)
+        //{
+        //    //mappings.FluentMappings.AddFromAssemblyOf<EmployeeMap>();
+
+        //    var autoCfg = new FluentAutoMappingConfiguration();
+        //    var autoMappings = AutoMap.AssemblyOf<Employee>(autoCfg)
+        //        .Conventions.AddFromAssemblyOf<CustomPrimaryKeyConvention>()
+        //        ;
+
+        //    mappings.AutoMappings.Add(autoMappings);
+        //}
+        #endregion
     }
 }

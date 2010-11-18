@@ -18,7 +18,7 @@ namespace ConOverConf.Handlers.QueryHandlers
             _gameRepository = gameRepository;
         }
 
-        public object Handle(SearchGames query)
+        public QueryResult Handle(SearchGames query)
         {
             var games = _gameRepository.Search(query.SearchText);
             

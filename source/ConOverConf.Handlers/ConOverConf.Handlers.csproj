@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="AutoMapperConfiguration.cs" />
     <Compile Include="CommandHandlers\AddGameToLibraryHandler.cs" />
+    <Compile Include="CommandHandlers\CheckGameInHandler.cs" />
+    <Compile Include="CommandHandlers\CheckGameOutHandler.cs" />
     <Compile Include="CommandInvoker.cs" />
     <Compile Include="ICommandInvoker.cs" />
     <Compile Include="IHandleCommand.cs" />

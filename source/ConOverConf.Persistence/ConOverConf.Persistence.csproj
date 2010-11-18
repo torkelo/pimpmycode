@@ -62,8 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FluentMappings\CustomPrimaryKeyConvention.cs" />
-    <Compile Include="FluentMappings\FluentMappingConfiguration.cs" />
     <Compile Include="FluentMappings\FluentMappings.cs" />
     <Compile Include="NHSessionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

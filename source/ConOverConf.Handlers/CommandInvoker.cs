@@ -12,7 +12,7 @@ namespace ConOverConf.Handlers
             Console.WriteLine("Command Received: {0}", command.GetType().Name);
 
             var handlerType = (typeof (IHandleCommand<>)).MakeGenericType(command.GetType());
-
+            
             var handler = IoC.Resolve(handlerType);
             
             using (var scope = new TransactionScope())

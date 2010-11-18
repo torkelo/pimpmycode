@@ -1,5 +1,6 @@
 
 using AutoMapper;
+using ConOverConf.Contracts;
 using ConOverConf.Contracts.Data;
 using ConOverConf.Contracts.Queries;
 using ConOverConf.Core.Models;
@@ -16,7 +17,7 @@ namespace ConOverConf.Handlers.QueryHandlers
             _repository = repository;
         }
 
-        public object Handle(GetGame query)
+        public QueryResult Handle(GetGame query)
         {
             var game = _repository.GetBy(query.Id);
 
