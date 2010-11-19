@@ -5,8 +5,8 @@ using GameLibrary.Framework;
 
 namespace GameLibrary.ViewModels
 {
-    [Export(typeof(PimpMyCodeViewModel))]
-    public class PimpMyCodeViewModel : ViewModelBase, IScreen
+    [Export(typeof(PimpMyCodeViewModel3))]
+    public class PimpMyCodeViewModel2 : ViewModelBase, IScreen
     {
         public string Title { get; set; }
         public DateTime PresentedOn { get; set; }
@@ -19,33 +19,28 @@ namespace GameLibrary.ViewModels
             {
                 _showWarning = value;
                 NotifyOfPropertyChange(() => ShowWarning);
-                CancelCommand.RaiseCanExecuteChanged();
+                NotifyOfPropertyChange(() => CanCancel);
             }
         }
 
-        public DelegateCommand CancelCommand { get; set; }
-        public DelegateCommand DeleteCommand { get; set; }
-
-        public PimpMyCodeViewModel()
+        public PimpMyCodeViewModel2()
         {
             Title = "Design for Convention over Configuration";
             PresentedOn = new DateTime(2010, 11, 24);
 
-            CancelCommand = new DelegateCommand(Cancel, CanCancel);
-            DeleteCommand = new DelegateCommand(Delete, null);
         }
 
-        private void Delete(object obj)
+        public void Delete()
         {
             ShowWarning = true;
         }
 
-        private bool CanCancel(object arg)
+        public bool CanCancel
         {
-            return ShowWarning;
+            get { return ShowWarning; }
         }
 
-        private void Cancel(object obj)
+        public void Cancel()
         {
             ShowWarning = false;
         }

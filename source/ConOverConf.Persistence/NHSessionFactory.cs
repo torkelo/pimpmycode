@@ -57,7 +57,6 @@ namespace ConOverConf.Persistence
         private static void BuildFluentMappingConfig(MappingConfiguration mappings)
         {
             mappings.FluentMappings.AddFromAssemblyOf<EmployeeMap>();
-            
         }
 
         public static void BuildSchema()

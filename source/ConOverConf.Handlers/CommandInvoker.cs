@@ -2,6 +2,7 @@ using System;
 using System.Transactions;
 using ConOverConf.Contracts;
 using ConOverConf.Contracts.Commands;
+using ConOverConf.Handlers.CommandHandlers;
 
 namespace ConOverConf.Handlers
 {
@@ -22,6 +23,22 @@ namespace ConOverConf.Handlers
             }
         }
 
-        
+        public void ConfigurationExample(Command command)
+        {
+            if (command is AddGameToLibrary)
+            {
+                IoC.Resolve<AddGameToLibraryHandler>().Handle((AddGameToLibrary)command);
+            }
+
+            if (command is CheckGameIn)
+            {
+                IoC.Resolve<CheckGameInHandler>().Handle((CheckGameIn)command);
+            }
+
+            if (command is CheckGameOut)
+            {
+                IoC.Resolve<CheckGameOutHandler>().Handle((CheckGameOut)command);
+            }
+        }
     }
 }

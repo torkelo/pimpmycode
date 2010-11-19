@@ -88,7 +88,7 @@ namespace GameLibrary.ViewModels
 
         public IResult PimpMyCode()
         {
-            return Show.Screen<PimpMyCodeViewModel>();
+            return Show.Screen<PimpMyCodeViewModel3>();
         }
 
         public void Activate()

@@ -15,7 +15,7 @@ namespace ConOverConf.Handlers
 
         public QueryResult SendQuery(Query query)
         {
-            return IoC.Resolve<QueryInvoker>().Invoke(query);
+            return IoC.Resolve<IQueryInvoker>().Invoke(query);
         }
 
     }
