@@ -18,7 +18,7 @@ namespace ConOverConf.ConsoleHost
 
             var host = new ServiceHost(typeof(Backend));  // this line takes 3-4 minutes
 
-            host.AddServiceEndpoint(typeof(IBackend), new NetTcpBinding(), "net.tcp://localhost:8731/Backend");
+            host.AddServiceEndpoint(typeof(IBackend), new BasicHttpBinding(BasicHttpSecurityMode.None), "http://localhost:8731/Backend");
             host.Open();
 
 

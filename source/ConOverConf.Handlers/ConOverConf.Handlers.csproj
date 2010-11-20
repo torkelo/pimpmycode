@@ -46,16 +46,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapperConfiguration.cs" />
-    <Compile Include="CommandHandlers\AddEmployeeToStoreCommandHandler.cs" />
-    <Compile Include="CommandHandlers\OpenStoreCommandHandler.cs" />
+    <Compile Include="CommandHandlers\AddGameToLibraryHandler.cs" />
     <Compile Include="CommandInvoker.cs" />
     <Compile Include="ICommandInvoker.cs" />
     <Compile Include="IHandleCommand.cs" />
-    <Compile Include="IQueryHandler.cs" />
+    <Compile Include="IHandleQuery.cs" />
     <Compile Include="IQueryInvoker.cs" />
     <Compile Include="Backend.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryHandlers\GetStoreQueryHandler.cs" />
+    <Compile Include="QueryHandlers\GetGameHandler.cs" />
+    <Compile Include="QueryHandlers\SearchGamesHandler.cs" />
     <Compile Include="QueryInvoker.cs" />
   </ItemGroup>
   <ItemGroup>

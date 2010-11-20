@@ -13,7 +13,7 @@ namespace ConOverConf.Handlers
             IoC.Resolve<ICommandInvoker>().Invoke(command);
         }
 
-        public QueryResult SendQuery(Query query)
+        public object SendQuery(Query query)
         {
             return IoC.Resolve<QueryInvoker>().Invoke(query);
         }

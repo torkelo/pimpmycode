@@ -22,3 +22,7 @@ H:\Dev\pimpmycode\source\ConOverConf.SlideExamples\bin\Debug\Microsoft.Practices
 H:\Dev\pimpmycode\source\ConOverConf.SlideExamples\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
 H:\Dev\pimpmycode\source\ConOverConf.SlideExamples\bin\Debug\Microsoft.Practices.Unity.Interception.xml
 H:\Dev\pimpmycode\source\ConOverConf.SlideExamples\bin\Debug\Microsoft.Practices.Unity.Interception.Configuration.xml
+H:\Dev\pimpmycode\source\ConOverConf.SlideExamples\bin\Debug\ConOverConf.SlideExamples.exe.config
+H:\Dev\pimpmycode\source\ConOverConf.SlideExamples\bin\Debug\AutoMapper.dll
+H:\Dev\pimpmycode\source\ConOverConf.SlideExamples\bin\Debug\StructureMap.dll
+H:\Dev\pimpmycode\source\ConOverConf.SlideExamples\bin\Debug\StructureMap.xml

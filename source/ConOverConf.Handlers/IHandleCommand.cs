@@ -8,9 +8,4 @@ namespace ConOverConf.Handlers
     {
         void Handle(T command);
     }
-
-    public interface IHandleQuery<T> 
-    {
-        QueryResult Handle(T query);
-    }
 }

@@ -7,7 +7,7 @@ namespace ConOverConf.Handlers
     {
         public QueryResult Invoke(Query query)
         {   
-            var handlerType = (typeof(IQueryHandler<>)).MakeGenericType(query.GetType());
+            var handlerType = (typeof(IHandleQuery<>)).MakeGenericType(query.GetType());
 
             var handler = IoC.Resolve(handlerType);
 

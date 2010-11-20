@@ -1,6 +1,4 @@
 using System.ServiceModel;
-using ConOverConf.Contracts.Commands;
-using ConOverConf.Contracts.Queries;
 
 namespace ConOverConf.Contracts
 {
@@ -11,6 +9,6 @@ namespace ConOverConf.Contracts
         void SendCommand(Command command);
 
         [OperationContract]
-        QueryResult SendQuery(Query query);
+        object SendQuery(Query query);
     }
 }

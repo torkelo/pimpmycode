@@ -1,6 +1,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.ServiceModel;
 using ConOverConf.Core.Models;
 using ConOverConf.Persistence.FluentMappings;
 using FluentNHibernate.Automapping;
@@ -20,9 +21,12 @@ namespace ConOverConf.Persistence
         public static ISession GetCurrent()
         {
             if (_sessionFactory == null)
+            {
                 _sessionFactory = BuildSessionFactory(); // normally you would have thread locks around this
+            }
             
-            // normaly you would have a session store (per-request or something)
+
+            // normaly you would have a session store (per-request or something, store it in WCF OperationContext)
             return _sessionFactory.OpenSession();
         }
 
