@@ -1,3 +1,4 @@
+using ConOverConf.Contracts;
 using ConOverConf.Contracts.Queries;
 
 namespace ConOverConf.Handlers

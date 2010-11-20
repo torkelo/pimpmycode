@@ -42,15 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="Commands\AddEmployeeToStoreCommand.cs" />
+    <Compile Include="Commands\OpenStoreCommand.cs" />
     <Compile Include="Data\ContractDTO.cs" />
     <Compile Include="IBackend.cs" />
     <Compile Include="KnownTypesHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\GetStoreQuery.cs" />
-    <Compile Include="Queries\Query.cs" />
-    <Compile Include="Queries\QueryResult.cs" />
+    <Compile Include="Query.cs" />
+    <Compile Include="QueryResult.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -17,7 +17,7 @@ namespace ConOverConf.Tests
         [Test]
         public void TestMappings()
         {
-            using (var session = NHSessionFactory.OpenSession())
+            using (var session = NHSessionFactory.GetCurrent())
             {
                 using (var transaction = session.BeginTransaction())
                 {

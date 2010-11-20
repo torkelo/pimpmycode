@@ -17,11 +17,11 @@ namespace ConOverConf.Persistence
         private static ISessionFactory _sessionFactory;
         private const string ConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=PimpMyCode;Integrated Security=True;Pooling=False";
 
-        public static ISession OpenSession()
+        public static ISession GetCurrent()
         {
             if (_sessionFactory == null)
                 _sessionFactory = BuildSessionFactory(); // normally you would have thread locks around this
-
+            
             // normaly you would have a session store (per-request or something)
             return _sessionFactory.OpenSession();
         }

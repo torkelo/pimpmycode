@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ConOverConf.Core.Models
 {
@@ -8,6 +9,7 @@ namespace ConOverConf.Core.Models
         public virtual string Name { get; set; }
         public virtual IList<Product> Products { get; set; }
         public virtual IList<Employee> Staff { get; set; }
+        public virtual bool IsOpened { get; set; }
 
         public Store()
         {
@@ -25,6 +27,11 @@ namespace ConOverConf.Core.Models
         {
             employee.Store = this;
             Staff.Add(employee);
+        }
+
+        public void MarkAsOpened()
+        {
+                
         }
     }
 }

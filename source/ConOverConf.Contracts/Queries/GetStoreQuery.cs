@@ -8,13 +8,13 @@ namespace ConOverConf.Contracts.Queries
     public class GetStoreQuery : Query<QueryResult>
     {
         [DataMember]
-        public Guid ContractId { get; set; }
+        public Guid StoreId { get; set; }
     }
 
     [DataContract]
-    public class GetStoreQueryResult
+    public class GetStoreQueryResult : QueryResult
     {
         [DataMember]
-        public StoreDTO Contact { get; set; }  
+        public StoreDTO Store { get; set; }  
     }
 }

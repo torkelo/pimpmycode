@@ -1,4 +1,5 @@
 using System.Transactions;
+using ConOverConf.Contracts;
 using ConOverConf.Contracts.Commands;
 
 namespace ConOverConf.Handlers

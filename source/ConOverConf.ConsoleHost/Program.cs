@@ -13,6 +13,9 @@ namespace ConOverConf.ConsoleHost
     {
         static void Main(string[] args)
         {
+            //UnityBootstrapper.Setup();
+            StructureMapBootstrapper.Setup();
+
             var host = new ServiceHost(typeof(Backend));  // this line takes 3-4 minutes
 
             host.AddServiceEndpoint(typeof(IBackend), new NetTcpBinding(), "net.tcp://localhost:8731/Backend");

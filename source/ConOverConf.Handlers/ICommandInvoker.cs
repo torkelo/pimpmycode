@@ -1,4 +1,5 @@
-﻿using ConOverConf.Contracts.Commands;
+﻿using ConOverConf.Contracts;
+using ConOverConf.Contracts.Commands;
 
 namespace ConOverConf.Handlers
 {
