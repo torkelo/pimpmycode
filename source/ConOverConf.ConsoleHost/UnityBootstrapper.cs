@@ -41,11 +41,7 @@ namespace ConOverConf.ConsoleHost
         {
             var typesInAssembly = typeof (AddGameToLibraryHandler).Assembly.GetExportedTypes();
 
-            foreach (var type in typesInAssembly)
-            {
-                if (type.Namespace.Contains("CommandHandlers") || type.Namespace.Contains("QueryHandlers"))
-                    container.RegisterType(type.GetInterfaces()[0], type);
-            }
+           
         }
 
         public static void RegisterRepositoriesByConvention(IUnityContainer container)

@@ -6,12 +6,11 @@ using ConOverConf.Contracts.Commands;
 namespace ConOverConf.Contracts
 {
     [DataContract]
-    [KnownType("GetKnownTypes")]
+    [KnownType(typeof(AddGameToLibrary))]
+    [KnownType(typeof(CheckGameIn))]
+    [KnownType(typeof(CheckGameOut))]
     public class Command
-    {
-        public static IEnumerable<Type> GetKnownTypes()
-        {
-            return KnownTypesHelper.GetKnownTypes<Command>();
-        }
+    { 
+       
     }
 }

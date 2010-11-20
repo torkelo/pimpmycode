@@ -56,7 +56,7 @@ namespace ConOverConf.Persistence
 
         private static void BuildFluentMappingConfig(MappingConfiguration mappings)
         {
-            mappings.FluentMappings.AddFromAssemblyOf<EmployeeMap>();
+            mappings.FluentMappings.AddFromAssemblyOf<GameMap>();
         }
 
         public static void BuildSchema()
@@ -97,4 +97,6 @@ namespace ConOverConf.Persistence
         //}
         #endregion
     }
+
+   
 }

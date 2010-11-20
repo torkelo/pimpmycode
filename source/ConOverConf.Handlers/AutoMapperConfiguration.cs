@@ -13,6 +13,15 @@ namespace ConOverConf.Handlers
             Mapper.CreateMap<Game, SearchResultDTO>();
         }
 
+
+
+
+
+
+
+
+
+
         public class Customer
         {
             public string Name { get; set; }
