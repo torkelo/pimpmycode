@@ -1,0 +1,52 @@
+﻿<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+
+
+  <bean id="handlingEventRepository"
+        class="se.citerus.dddsample.infrastructure.persistence.hibernate.HandlingEventRepositoryHibernate">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+
+  <bean id="voyageRepository"
+        class="se.citerus.dddsample.infrastructure.persistence.hibernate.VoyageRepositoryHibernate">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+
+  <bean id="locationRepository"
+        class="se.citerus.dddsample.infrastructure.persistence.hibernate.LocationRepositoryHibernate">
+    <property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+
+  <bean id="handlingEventFactory" class="se.citerus.dddsample.domain.model.handling.HandlingEventFactory">
+    <constructor-arg ref="cargoRepository"/>
+    <constructor-arg ref="voyageRepository"/>
+    <constructor-arg ref="locationRepository"/>
+  </bean>
+
+  <bean id="bookingService" class="se.citerus.dddsample.application.impl.BookingServiceImpl">
+    <constructor-arg ref="cargoRepository"/>
+    <constructor-arg ref="locationRepository"/>
+    <constructor-arg ref="routingService"/>
+  </bean>
+
+  <bean id="cargoInspectionService" class="se.citerus.dddsample.application.impl.CargoInspectionServiceImpl">
+    <constructor-arg ref="cargoRepository"/>
+    <constructor-arg ref="applicationEvents"/>
+    <constructor-arg ref="handlingEventRepository"/>
+  </bean>
+
+  <bean id="handlingEventService" class="se.citerus.dddsample.application.impl.HandlingEventServiceImpl">
+    <constructor-arg ref="handlingEventRepository"/>
+    <constructor-arg ref="handlingEventFactory"/>
+    <constructor-arg ref="applicationEvents"/>
+  </bean>
+
+
+</beans>

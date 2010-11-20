@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.NetTcp</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement">
+      <summary>An abstract class that supplements the base <see cref="T:System.ServiceModel.Channels.TransportBindingElement" /> class with additional properties that are common to connection-oriented transports, such as TCP.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Determines whether a channel factory of the specified type can be built.</summary>
+      <returns>true if a channel factory can be built; otherwise, false.</returns>
+      <param name="context">The <see cref="T:System.ServiceModel.Channels.BindingContext" /> for the channel.</param>
+      <typeparam name="TChannel">The type of channel to check.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> is null.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ConnectionBufferSize">
+      <summary>Gets or sets the size of the buffer used to transmit a chunk of the serialized message on the wire from the client or service.</summary>
+      <returns>The size of the connection buffer. The default value is 8192 bytes.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="value" /> set is less than zero.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxBufferSize">
+      <summary>Gets or sets the maximum size of the buffer to use. </summary>
+      <returns>The maximum number of bytes that is used to buffer incoming messages in memory. The default value is 65,536 bytes.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="value" /> set is less or equal to than zero.</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TcpConnectionPoolSettings">
+      <summary>Represents properties that control the behavior of the TCP connection pool.</summary>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.GroupName">
+      <summary>Gets or sets the group name of the connection pool group on the client.</summary>
+      <returns>The group name of the connection pool group on the client. The default name is "default".</returns>
+      <exception cref="T:System.ArgumentNullException">The <paramref name="value" /> is null.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.IdleTimeout">
+      <summary>Gets or sets the maximum time that the connection can be idle in the connection pool before being disconnected.</summary>
+      <returns>A <see cref="T:System.TimeSpan" /> structure that indicates the maximum time that the connection can be idle in the connection pool before being disconnected.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="value" /> is less than zero.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.LeaseTimeout">
+      <summary>Gets or sets the time span after which a connection in the connection pool is closed.</summary>
+      <returns>A <see cref="T:System.TimeSpan" /> structure that indicates the time span after which a cached TCP connection is purged from the connection pool.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="value" /> is less than zero.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.MaxOutboundConnectionsPerEndpoint">
+      <summary>Gets or sets the maximum number of outbound connections for each endpoint that is cached in the connection pool.</summary>
+      <returns>The maximum number of allowed outbound connections for each endpoint that is cached in the connection pool. The default value is 10.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">The <paramref name="value" /> is less than or equal to zero.</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TcpTransportBindingElement">
+      <summary>Represents the binding element for the Transmission Control Protocol (TCP) transport.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> class.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.#ctor(System.ServiceModel.Channels.TcpTransportBindingElement)">
+      <summary>Initializes a new instance of the <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> class from an existing instance.</summary>
+      <param name="elementToBeCloned">The instance of the <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> class to be cloned.</param>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Creates a channel factory that can be used to create a channel.</summary>
+      <returns>Returns an <see cref="T:System.ServiceModel.Channels.IChannelFactory`1" /> of type <paramref name="TChannel" />.</returns>
+      <param name="context">The <see cref="T:System.ServiceModel.Channels.BindingContext" /> that describes the bindings, behaviors, contracts, and other information required to create the channel factory.</param>
+      <typeparam name="TChannel">The type of channel factory.</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.Clone">
+      <summary>Creates a copy of the current binding element.</summary>
+      <returns>A copy of the current <see cref="T:System.ServiceModel.Channels.BindingElement" /> instance.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpTransportBindingElement.ConnectionPoolSettings">
+      <summary>Gets a collection of connection pool settings.</summary>
+      <returns>A <see cref="T:System.ServiceModel.Channels.TcpConnectionPoolSettings" /> object that contains various properties related to connection pooling.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpTransportBindingElement.Scheme">
+      <summary>Returns the URI scheme for the transport.</summary>
+      <returns>Returns the URI scheme for the TCP transport: "net.tcp".</returns>
+    </member>
+  </members>
+</doc>
