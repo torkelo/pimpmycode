@@ -12,7 +12,7 @@ namespace ConOverConf.Handlers
         {
             Console.WriteLine("Command Received: {0}", command.GetType().Name);
 
-            var handlerType = (typeof (IHandleCommand<>)).MakeGenericType(command.GetType());
+            var handlerType = GetHandlerTypeFor(command);
             
             var handler = IoC.Resolve(handlerType);
             
@@ -23,22 +23,10 @@ namespace ConOverConf.Handlers
             }
         }
 
-        public void ConfigurationExample(Command command)
+        public Type GetHandlerTypeFor(Command command)
         {
-            if (command is AddGameToLibrary)
-            {
-                IoC.Resolve<AddGameToLibraryHandler>().Handle((AddGameToLibrary)command);
-            }
-
-            if (command is CheckGameIn)
-            {
-                IoC.Resolve<CheckGameInHandler>().Handle((CheckGameIn)command);
-            }
-
-            if (command is CheckGameOut)
-            {
-                IoC.Resolve<CheckGameOutHandler>().Handle((CheckGameOut)command);
-            }
+            var typeHandler = typeof (IHandleCommand<>).MakeGenericType(command.GetType());
+            return typeHandler;
         }
     }
 }

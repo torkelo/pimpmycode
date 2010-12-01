@@ -1,5 +1,6 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" default-access="property" auto-import="true" default-cascade="none" default-lazy="true">
-  <class xmlns="urn:nhibernate-mapping-2.2" mutable="true" name="ConOverConf.Fluent.Core.Models.Product, ConOverConf.Fluent.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="`Product`">
+  
+  <class name="ConOverConf.Fluent.Core.Models.Product, ConOverConf.Fluent.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" table="`Product`">
     
     <id name="Id" column="Id" type="System.Int32">
       <generator class="identity" />

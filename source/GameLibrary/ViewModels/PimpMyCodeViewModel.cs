@@ -5,8 +5,8 @@ using GameLibrary.Framework;
 
 namespace GameLibrary.ViewModels
 {
-    [Export(typeof(PimpMyCodeViewModel3))]
-    public class PimpMyCodeViewModel2 : ViewModelBase, IScreen
+    [Export(typeof(PimpMyCodeViewModel))]
+    public class PimpMyCodeViewModel : ViewModelBase, IScreen
     {
         public string Title { get; set; }
         public DateTime PresentedOn { get; set; }
@@ -23,11 +23,10 @@ namespace GameLibrary.ViewModels
             }
         }
 
-        public PimpMyCodeViewModel2()
+        public PimpMyCodeViewModel()
         {
             Title = "Design for Convention over Configuration";
             PresentedOn = new DateTime(2010, 11, 24);
-
         }
 
         public void Delete()

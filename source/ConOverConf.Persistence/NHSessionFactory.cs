@@ -55,8 +55,14 @@ namespace ConOverConf.Persistence
 
 
         private static void BuildFluentMappingConfig(MappingConfiguration mappings)
-        {
-            mappings.FluentMappings.AddFromAssemblyOf<GameMap>();
+        {   
+           //mappings.FluentMappings.AddFromAssemblyOf<GameMap>();
+
+            var autoMappingConfig = new AutoMappingConfiguration();
+            var autoModel = AutoMap.AssemblyOf<Game>(autoMappingConfig);
+            autoModel.Conventions.AddFromAssemblyOf<TableNameConvention>();
+
+            mappings.AutoMappings.Add(autoModel);
         }
 
         public static void BuildSchema()
@@ -98,5 +104,11 @@ namespace ConOverConf.Persistence
         #endregion
     }
 
-   
+    public class AutoMappingConfiguration : DefaultAutomappingConfiguration
+    {
+        public override bool ShouldMap(Type type)
+        {
+            return type.Namespace == "ConOverConf.Core.Models";
+        }
+    }
 }

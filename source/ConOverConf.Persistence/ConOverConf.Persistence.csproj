@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FluentMappings\FluentMappings.cs" />
+    <Compile Include="FluentMappings\TableNameConvention.cs" />
     <Compile Include="NHSessionFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EmployeeRepository.cs" />

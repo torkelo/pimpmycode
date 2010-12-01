@@ -10,13 +10,9 @@ namespace ConOverConf.Handlers
         public static void Configure()
         {
             Mapper.CreateMap<Game, GameDTO>();
+             
             Mapper.CreateMap<Game, SearchResultDTO>();
         }
-
-
-
-
-
 
 
 

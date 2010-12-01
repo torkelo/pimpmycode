@@ -19,29 +19,33 @@ namespace ConOverConf.ConsoleHost
             container.RegisterType<ICommandInvoker, CommandInvoker>();
             container.RegisterType<IQueryInvoker, QueryInvoker>();
 
-            container.RegisterType<IHandleCommand<AddGameToLibrary>, AddGameToLibraryHandler>();
-            container.RegisterType<IHandleCommand<CheckGameIn>, CheckGameInHandler>();
-            container.RegisterType<IHandleCommand<CheckGameOut>, CheckGameOutHandler>();
+            //container.RegisterType<IHandleCommand<AddGameToLibrary>, AddGameToLibraryHandler>();
+            //container.RegisterType<IHandleCommand<CheckGameIn>, CheckGameInHandler>();
+            //container.RegisterType<IHandleCommand<CheckGameOut>, CheckGameOutHandler>();
 
-            container.RegisterType<IHandleQuery<SearchGames>, SearchGamesHandler>();
-            container.RegisterType<IHandleQuery<GetGame>, GetGameHandler>();
+            //container.RegisterType<IHandleQuery<SearchGames>, SearchGamesHandler>();
+            //container.RegisterType<IHandleQuery<GetGame>, GetGameHandler>();
             
-            //RegisterCommandsAndQueryHandlersByConvention(container);
+            RegisterCommandsAndQueryHandlersByConvention(container);
 
-            container.RegisterType<IStoreRepository, StoreRepository>();
-            container.RegisterType<IEmployeeRepository, EmployeeRepository>();
-            container.RegisterType<IGameRepository, GameRepository>();
+            //container.RegisterType<IStoreRepository, StoreRepository>();
+            //container.RegisterType<IEmployeeRepository, EmployeeRepository>();
+            //container.RegisterType<IGameRepository, GameRepository>();
             
-            //RegisterRepositoriesByConvention(container);
+            RegisterRepositoriesByConvention(container);
 
             IoC.Container = new UnityServiceLocator(container);
         }
 
         public static void RegisterCommandsAndQueryHandlersByConvention(IUnityContainer container)
         {
-            var typesInAssembly = typeof (AddGameToLibraryHandler).Assembly.GetExportedTypes();
-
-           
+            foreach (var type in typeof(AddGameToLibraryHandler).Assembly.GetExportedTypes())
+            {
+                if (type.Namespace.Contains("CommandHandlers") || type.Namespace.Contains("QueryHandlers"))
+                {
+                    container.RegisterType(type.GetInterfaces()[0], type);
+                }
+            }
         }
 
         public static void RegisterRepositoriesByConvention(IUnityContainer container)
